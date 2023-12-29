@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwi6m8rvsdwvc"]
+
+[ext_resource type="Texture2D" uid="uid://dut1cbgjei8c8" path="res://assets/sprites/Arkanoid wall.png" id="1_ighvd"]
+
+[node name="Wall" type="StaticBody2D" groups=["Wall"]]
+position = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ighvd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-444, 436)
+polygon = PackedVector2Array(1, -2, 3, -858, 876, -858, 879, 12, 907, 14, 901, -885, -20, -882, -24, 2)

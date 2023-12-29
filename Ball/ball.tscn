@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://byfll8amoelhn"]
+
+[ext_resource type="Script" path="res://Ball/ball.gd" id="1_i7a0j"]
+[ext_resource type="Texture2D" uid="uid://bj84q2rlbg20a" path="res://assets/sprites/Arkanoid ball.png" id="1_lwlt6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iho5o"]
+bounce = 0.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_383n3"]
+radius = 6.0
+
+[node name="Ball" type="RigidBody2D" groups=["Ball"]]
+physics_material_override = SubResource("PhysicsMaterial_iho5o")
+max_contacts_reported = 1
+contact_monitor = true
+can_sleep = false
+script = ExtResource("1_i7a0j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lwlt6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_383n3")
+
+[connection signal="body_exited" from="." to="." method="_on_ball_miss"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

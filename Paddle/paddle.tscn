@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck7hu6lj4sjca"]
+
+[ext_resource type="Texture2D" uid="uid://c1inppoqeqquu" path="res://assets/sprites/Arkanoid Paddle.png" id="1_h7hsi"]
+[ext_resource type="Script" path="res://Paddle/paddle.gd" id="1_o04pg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4r7s"]
+size = Vector2(53, 21)
+
+[node name="Paddle" type="RigidBody2D" groups=["Paddle"]]
+position = Vector2(577, 599)
+input_pickable = true
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_o04pg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h7hsi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 7.5)
+shape = SubResource("RectangleShape2D_f4r7s")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
