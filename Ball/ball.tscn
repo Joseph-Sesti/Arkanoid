@@ -4,13 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://bj84q2rlbg20a" path="res://assets/sprites/Arkanoid ball.png" id="1_lwlt6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iho5o"]
-bounce = 0.3
+friction = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_383n3"]
 radius = 6.0
 
-[node name="Ball" type="RigidBody2D" groups=["Ball"]]
+[node name="Ball" type="RigidBody2D" groups=["ball"]]
+position = Vector2(466, 350)
+collision_mask = 3
+mass = 0.01
 physics_material_override = SubResource("PhysicsMaterial_iho5o")
+gravity_scale = 0.0
 max_contacts_reported = 1
 contact_monitor = true
 can_sleep = false
@@ -22,5 +26,4 @@ texture = ExtResource("1_lwlt6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_383n3")
 
-[connection signal="body_exited" from="." to="." method="_on_ball_miss"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]

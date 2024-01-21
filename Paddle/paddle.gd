@@ -1,13 +1,13 @@
 extends RigidBody2D
 
-const DRAG_BOX_MAX: Vector2 = Vector2(410, 0)
-const DRAG_BOX_MIN: Vector2 = Vector2(-410, 0)
+const SIGNALMANAGER = preload("res://singletons/signal_manager.gd")
+const DRAG_BOX_MAX: Vector2 = Vector2(395, 0)
+const DRAG_BOX_MIN: Vector2 = Vector2(-395, 0)
 const RAIL: Vector2 = Vector2(0,0)
 var _drag_start: Vector2 = Vector2.ZERO
 var _last_dragged_position: Vector2 = Vector2.ZERO
 var _dragged_vector: Vector2 = Vector2.ZERO
 var _start: Vector2 = Vector2.ZERO
-var _draggable: bool = false
 var _last_drag_amount: float = 0.0
 var _dragging: bool = false
 var _released: bool = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://1qptm6rc505v"]
+[gd_scene load_steps=6 format=3 uid="uid://1qptm6rc505v"]
 
 [ext_resource type="Script" path="res://Level/level.gd" id="1_0nnk8"]
 [ext_resource type="PackedScene" uid="uid://bwi6m8rvsdwvc" path="res://Wall/wall.tscn" id="1_o6dq7"]
 [ext_resource type="PackedScene" uid="uid://byfll8amoelhn" path="res://Ball/ball.tscn" id="1_vmf86"]
 [ext_resource type="PackedScene" uid="uid://ck7hu6lj4sjca" path="res://Paddle/paddle.tscn" id="3_ejuec"]
+[ext_resource type="PackedScene" uid="uid://cv2jsagmu6arx" path="res://Offscreen/Offscreen.tscn" id="5_plirj"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(1, -1)
@@ -17,5 +18,8 @@ position = Vector2(580, 600)
 freeze = true
 
 [node name="Ball" parent="." instance=ExtResource("1_vmf86")]
-position = Vector2(580, 591)
+position = Vector2(580, 589)
 freeze = true
+
+[node name="Area2D" parent="." instance=ExtResource("5_plirj")]
+position = Vector2(564, 653)
