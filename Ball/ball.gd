@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const BALL_SPEED: Vector2 = Vector2(1, -4)
+const BALL_SPEED: Vector2 = Vector2(2, -2)
 var ball_velocity = Vector2(0.5, -2)
 @onready var paddle = get_node("/root/Level/Paddle")
 
@@ -18,10 +18,7 @@ func _process(delta):
 				var difference = global_position - paddle.global_position
 				ball_velocity = difference.normalized() * BALL_SPEED
 				print(ball_velocity)
-			#var reflect = collision_info.get_remainder().bounce(collision_info.get_normal())
 			ball_velocity = ball_velocity.bounce(collision_info.get_normal())
-			#move_and_collide(reflect)
-			
 
 func on_game_start() -> void:
 	freeze = false

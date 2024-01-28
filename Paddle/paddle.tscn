@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Paddle/paddle.gd" id="1_o04pg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4r7s"]
-size = Vector2(95, 21)
+size = Vector2(90, 21)
 
 [node name="Paddle" type="RigidBody2D" groups=["paddle"]]
 position = Vector2(585, 600)
@@ -16,12 +16,12 @@ contact_monitor = true
 script = ExtResource("1_o04pg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.25008, 0)
-scale = Vector2(1.80468, 1)
+position = Vector2(-0.500019, 0)
+scale = Vector2(1.70312, 1)
 texture = ExtResource("1_h7hsi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, 7)
+position = Vector2(-3, 7)
 shape = SubResource("RectangleShape2D_f4r7s")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
