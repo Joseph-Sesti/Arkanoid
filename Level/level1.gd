@@ -1,6 +1,5 @@
 extends Node2D
 
-var ball_scene: PackedScene = preload("res://Ball/ball.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
