@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dikovyc6ja0kv"]
+
+[ext_resource type="Script" path="res://TileMap.gd" id="1_1y8o2"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ylkai"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_do02u"]
+
+[sub_resource type="TileSet" id="TileSet_x51jl"]
+sources/0 = SubResource("TileSetScenesCollectionSource_ylkai")
+sources/1 = SubResource("TileSetAtlasSource_do02u")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_x51jl")
+cell_quadrant_size = 32
+format = 2
+script = ExtResource("1_1y8o2")
