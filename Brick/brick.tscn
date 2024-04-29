@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://46qrxu386ex4"]
+[gd_scene load_steps=4 format=3 uid="uid://46qrxu386ex4"]
 
 [ext_resource type="Texture2D" uid="uid://d4i6p255clfwu" path="res://assets/sprites/ArkanoidBrick.png" id="1_eh7me"]
+[ext_resource type="Script" path="res://Brick/brick.gd" id="1_h43a7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17rg6"]
 size = Vector2(55, 34)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Brick" type="StaticBody2D" groups=["brick"]]
+collision_layer = 4
+script = ExtResource("1_h43a7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_eh7me")

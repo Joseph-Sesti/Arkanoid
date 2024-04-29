@@ -4,6 +4,7 @@ extends Node
 const GROUP_BALL: String = "ball"
 const GROUP_PADDLE: String = "paddle"
 const GROUP_OFFSCREEN: String = "offscreen"
+const GROUP_BRICK: String = "brick"
 
 
 # Called when the node enters the scene tree for the first time.

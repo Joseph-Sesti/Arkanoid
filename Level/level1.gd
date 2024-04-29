@@ -21,5 +21,5 @@ func fill_grid():
 	for i in range(tile_grid.size()):
 		for j in range(tile_grid[i].size()):
 			var brick = brick_scene.instantiate()
-			brick.global_position = Vector2((j * 64) + 220, (i * 48) + 90)
+			brick.global_position = Vector2((j * 64) + 220, (i * 40) + 90)
 			add_child(brick)

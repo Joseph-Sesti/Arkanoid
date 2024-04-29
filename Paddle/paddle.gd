@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Paddle
 
 const SIGNALMANAGER = preload("res://singletons/signal_manager.gd")
 const DRAG_BOX_MAX: Vector2 = Vector2(395, 0)
