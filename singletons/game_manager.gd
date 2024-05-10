@@ -1,11 +1,14 @@
 extends Node
+signal on_score_updated
+signal on_ball_miss
+signal on_game_start
 
 #var main_scene: PackedScene = preload("res://Main/main.tscn")
-const GROUP_BALL: String = "ball"
-const GROUP_PADDLE: String = "paddle"
-const GROUP_OFFSCREEN: String = "offscreen"
-const GROUP_BRICK: String = "brick"
 
+const DEFAULT_SCORE: int = 9999
+
+var _high_score: int = 0
+var _score: int  = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,3 +18,18 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func get_score() -> int:
+	return _score
+
+func get_high_score() -> int:
+	return _high_score
+
+func set_score(num: int) -> void:
+	_score = num
+	if _high_score < _score:
+		_high_score = _score
+	on_score_updated.emit()
+
+func increase_score() -> void:
+	set_score(_score + 1)

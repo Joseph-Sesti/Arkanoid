@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjmrgtixioxsv"]
+[gd_scene load_steps=8 format=3 uid="uid://cjmrgtixioxsv"]
 
 [ext_resource type="Script" path="res://Level/level1.gd" id="1_qoitx"]
 [ext_resource type="PackedScene" uid="uid://bwi6m8rvsdwvc" path="res://Wall/wall.tscn" id="2_w5qfy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://byfll8amoelhn" path="res://Ball/ball.tscn" id="4_jgw0e"]
 [ext_resource type="PackedScene" uid="uid://cv2jsagmu6arx" path="res://Offscreen/Offscreen.tscn" id="5_vwwwl"]
 [ext_resource type="Script" path="res://Level/Pause.gd" id="6_dgy6g"]
+[ext_resource type="PackedScene" uid="uid://db3745axh8nql" path="res://GameUI/game_ui.tscn" id="7_uk1cn"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(1, -1)
@@ -28,3 +29,5 @@ position = Vector2(564, 653)
 [node name="Pause" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("6_dgy6g")
+
+[node name="GameUI" parent="." instance=ExtResource("7_uk1cn")]

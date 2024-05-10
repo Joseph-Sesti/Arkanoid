@@ -1,7 +1,6 @@
 extends RigidBody2D
 class_name Paddle
 
-const SIGNALMANAGER = preload("res://singletons/signal_manager.gd")
 const DRAG_BOX_MAX: Vector2 = Vector2(395, 0)
 const DRAG_BOX_MIN: Vector2 = Vector2(-395, 0)
 const RAIL: Vector2 = Vector2(0,0)
@@ -29,7 +28,7 @@ func grab() -> void:
 	_dragging = true
 	_drag_start = get_global_mouse_position()
 	_last_dragged_position = _drag_start
-	SignalManager.on_game_start.emit()
+	GameManager.on_game_start.emit()
 
 func drag() -> void:
 	var gmp = get_global_mouse_position()
