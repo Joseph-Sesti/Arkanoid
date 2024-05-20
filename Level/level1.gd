@@ -12,6 +12,7 @@ var tile_grid = [
 func _ready():
 	fill_grid()
 	GameManager.set_score(0)
+	GameManager.set_lives(3)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
