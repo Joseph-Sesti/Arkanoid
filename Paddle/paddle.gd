@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 class_name Paddle
 
 const DRAG_BOX_MAX: Vector2 = Vector2(395, 0)

@@ -6,12 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4r7s"]
 size = Vector2(90, 21)
 
-[node name="Paddle" type="RigidBody2D" groups=["paddle"]]
+[node name="Paddle" type="CharacterBody2D" groups=["paddle"]]
 position = Vector2(585, 600)
 input_pickable = true
-gravity_scale = 0.0
-max_contacts_reported = 1
-contact_monitor = true
 script = ExtResource("1_o04pg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

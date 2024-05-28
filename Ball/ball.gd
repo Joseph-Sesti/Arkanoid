@@ -27,4 +27,5 @@ func on_game_start() -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	GameManager.decrease_lives()
+	GameManager.on_ball_miss.emit()
 

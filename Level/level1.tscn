@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjmrgtixioxsv"]
+[gd_scene load_steps=5 format=3 uid="uid://cjmrgtixioxsv"]
 
 [ext_resource type="Script" path="res://Level/level1.gd" id="1_qoitx"]
 [ext_resource type="PackedScene" uid="uid://bwi6m8rvsdwvc" path="res://Wall/wall.tscn" id="2_w5qfy"]
-[ext_resource type="PackedScene" uid="uid://ck7hu6lj4sjca" path="res://Paddle/paddle.tscn" id="3_ucexn"]
-[ext_resource type="PackedScene" uid="uid://byfll8amoelhn" path="res://Ball/ball.tscn" id="4_jgw0e"]
 [ext_resource type="Script" path="res://Level/Pause.gd" id="6_dgy6g"]
 [ext_resource type="PackedScene" uid="uid://db3745axh8nql" path="res://GameUI/game_ui.tscn" id="7_uk1cn"]
 
@@ -14,16 +12,14 @@ script = ExtResource("1_qoitx")
 [node name="Wall" parent="." instance=ExtResource("2_w5qfy")]
 position = Vector2(581, 452)
 
-[node name="Paddle" parent="." instance=ExtResource("3_ucexn")]
-position = Vector2(580, 600)
-freeze = true
-
-[node name="Ball" parent="." instance=ExtResource("4_jgw0e")]
-position = Vector2(580, 589)
-freeze = true
-
 [node name="Pause" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("6_dgy6g")
 
 [node name="GameUI" parent="." instance=ExtResource("7_uk1cn")]
+
+[node name="BallSpawn" type="Marker2D" parent="."]
+position = Vector2(580, 589)
+
+[node name="PaddleSpawn" type="Marker2D" parent="."]
+position = Vector2(580, 600)
