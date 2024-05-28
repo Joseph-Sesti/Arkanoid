@@ -4,8 +4,6 @@ signal on_ball_miss
 signal on_game_start
 
 #var main_scene: PackedScene = preload("res://Main/main.tscn")
-
-
 var _high_score: int = 0
 var _score: int  = 0
 var _lives: int = 0

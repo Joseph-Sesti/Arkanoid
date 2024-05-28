@@ -16,7 +16,7 @@ func _process(delta):
 		if collision_info:
 			var collider = collision_info.get_collider()
 			if collider is Paddle:
-				var difference = global_position - paddle.global_position
+				var difference = global_position - collider.global_position
 				ball_velocity = difference.normalized() * BALL_SPEED
 			if collider is Brick:
 				collider.destroy()
@@ -24,3 +24,7 @@ func _process(delta):
 
 func on_game_start() -> void:
 	freeze = false
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	GameManager.decrease_lives()
+
