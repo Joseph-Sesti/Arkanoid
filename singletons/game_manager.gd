@@ -2,8 +2,8 @@ extends Node
 signal on_score_updated
 signal on_ball_miss
 signal on_game_start
+var level_1_scene: PackedScene = preload("res://Level/level1.tscn")
 
-#var main_scene: PackedScene = preload("res://Main/main.tscn")
 var _high_score: int = 0
 var _score: int  = 0
 var _lives: int = 0
@@ -41,3 +41,6 @@ func set_lives(num: int) -> void:
 func decrease_lives() -> void:
 	_lives -= 1
 	on_ball_miss.emit()
+
+func load_level_1() -> void:
+	get_tree().change_scene_to_packed(level_1_scene)

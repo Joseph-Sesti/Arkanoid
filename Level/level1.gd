@@ -46,7 +46,10 @@ func spawn_paddle() -> void:
 	paddle.position = paddle_spawn.position
 
 func on_ball_miss() -> void:
-	ball.queue_free()
-	paddle.queue_free()
-	spawn_ball()
-	spawn_paddle()
+	if GameManager._lives > 0:
+		ball.queue_free()
+		paddle.queue_free()
+		spawn_ball()
+		spawn_paddle()
+	else:
+		GameManager.load_level_1()
